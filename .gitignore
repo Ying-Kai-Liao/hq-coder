@@ -1,0 +1,7 @@
+# state lives in the state folder (hq-state), never in the package
+/memory/
+/data/
+.editing
+__pycache__/
+.DS_Store
+node_modules/

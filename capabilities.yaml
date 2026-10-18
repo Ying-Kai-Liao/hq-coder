@@ -1,0 +1,17 @@
+# Declarations only. Credentials come from the runtime, never from here.
+needs: []                       # no shared services: GitHub is the user's own gh login (gh auth, keyring)
+tools:
+  - git                         # worktrees and branches in a project's checkout
+  - gh                          # pull requests and CI status
+  - project commands            # install, test, build, run: from the project's codebase.md ## Commands
+  - hq-send                     # replies to the message's reply target
+  - tools/protected.sh          # is the default branch protected on GitHub (read-only)
+  - tools/start.py              # starts the live session: Orca tab, tmux session, or this terminal
+skills_from: pstack (michael-denyer/pstack-claude, MIT), 9 leaf skills linked in skills.json; not the plugin
+state:
+  - memory/jobs/<job>.md        # one file per job, its whole state: survives compaction and restarts
+  - files/<ID>/worktrees/<job>/ # the job's worktree; removed once its PR is merged or closed
+requires:   # programs it runs: hq install and hq doctor check them (hq deps coder --install)
+  git: xcode-select --install   # worktrees and commits
+  gh: brew install gh           # pull requests
+access: writes only in its own worktrees; pushes coder/ branches and opens PRs; never merges or pushes the default branch

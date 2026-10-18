@@ -1,0 +1,14 @@
+{
+  "$comment": "Third-party skills, linked rather than copied: hq-pkg fetch downloads each folder at its pinned commit into skills/<name>/ (git-ignored). Change ref to upgrade; the next run checks and snapshots it. pstack: Claude Code port by Michael Denyer of Lauren Tan's pstack, MIT (LICENSE and NOTICE.md in the source repo). Only leaf skills that stand alone: none needs the pstack plugin, its subagents or its router.",
+  "skills": {
+    "tdd":                                       {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/tdd", "license": "MIT"},
+    "principle-fix-root-causes":                 {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/principle-fix-root-causes", "license": "MIT"},
+    "principle-test-behavior-not-implementation":{"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/principle-test-behavior-not-implementation", "license": "MIT"},
+    "principle-laziness-protocol":               {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/principle-laziness-protocol", "license": "MIT"},
+    "principle-subtract-before-you-add":         {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/principle-subtract-before-you-add", "license": "MIT"},
+    "principle-prove-it-works":                  {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/principle-prove-it-works", "license": "MIT"},
+    "deslop":                                    {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/deslop", "license": "MIT"},
+    "get-pr-comments":                           {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/get-pr-comments", "license": "MIT"},
+    "fix-ci":                                    {"repo": "michael-denyer/pstack-claude", "ref": "046341e3aaf2405083973a37f860d0d2ea98e18a", "path": "plugins/pstack/skills/fix-ci", "license": "MIT"}
+  }
+}

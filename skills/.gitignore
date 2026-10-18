@@ -1,0 +1,10 @@
+# third-party skills fetched from skills.json (hq-pkg fetch); not committed
+/deslop/
+/fix-ci/
+/get-pr-comments/
+/principle-fix-root-causes/
+/principle-laziness-protocol/
+/principle-prove-it-works/
+/principle-subtract-before-you-add/
+/principle-test-behavior-not-implementation/
+/tdd/
