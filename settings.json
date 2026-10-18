@@ -1,6 +1,9 @@
 {
-  "$comment": "Merged over your global ~/.claude/settings.json for this agent's runs (hq --settings). Placeholders: {{HQ}}, {{AGENT_DIR}} (pinned package), {{AGENTS}}, {{PACKAGE}} (live package: skills/learned/), {{HOME_DIR}} (memory, data, files), {{HOME_REAL}} (same, symlinks resolved). bin/hq adds: memory, learned skills and shared project files writable; secrets denied. Runs start in hq's default permission mode (auto unless ~/.hq/settings.json changes it): Claude Code checks each action and stops only for risky ones. Deny rules are a backstop for the rules in agent.md (Bash prefixes can be worded around); the real guard for the default branch is branch protection on GitHub.",
+  "$comment": "Merged over your global ~/.claude/settings.json for this agent's runs (hq --settings). Placeholders: {{HQ}}, {{AGENT_DIR}} (pinned package), {{AGENTS}}, {{PACKAGE}} (live package: skills/learned/), {{HOME_DIR}} (memory, data, files), {{HOME_REAL}} (same, symlinks resolved). bin/hq adds: memory, learned skills and shared project files writable; secrets denied. Runs start in bypassPermissions (permissions.defaultMode, a suggestion the installer accepts or overrides); HQ_PERMISSION_MODE overrides, and hq:coder subagents use the caller's mode. Deny rules still apply in bypass. Deny rules are a backstop for the rules in agent.md (Bash prefixes can be worded around); the real guard for the default branch is branch protection on GitHub. env: CLAUDE_AUTOCOMPACT_PCT_OVERRIDE 40 compacts the live session at 40% of its auto-compact window (Claude Code 2.1.302: threshold = min(window x 40%, window - 13k); about 39% of the 1M context Ctx shows); job files keep the state across it.",
   "autoMemoryEnabled": false,
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "40"
+  },
   "enabledPlugins": {
     "cowork-plugin-management@synced": false,
     "data@synced": false,
@@ -15,6 +18,7 @@
     "vercel@claude-plugins-official": false
   },
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Edit(/{{PACKAGE}}/skills/learned/**)",
       "Edit(/{{HOME_REAL}}/memory/**)",
